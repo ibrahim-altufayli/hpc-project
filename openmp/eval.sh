@@ -20,7 +20,7 @@ echo "Compile with o2 and dynamic scheduling"
 icc -std=c++11 -O2 -qopenmp  ./code/mandelbrot_dynamic.cpp -o ./builds/exc_dynamic.o
 
 echo "Compile with o2 and guided scheduling"
-icc -std=c++11 -O3 -qopenmp  ./code/mandelbrot_guided.cpp -o ./builds/exc_guided.o
+icc -std=c++11 -O2 -qopenmp  ./code/mandelbrot_guided.cpp -o ./builds/exc_guided.o
 
 
 for i in 1000 2000 3000
