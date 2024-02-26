@@ -116,7 +116,7 @@ int main(int argc, char **argv)
 
     int * partialImage = new int[dutySize];
 
-    //omp_set_num_threads(12);
+    //omp_set_num_threads(256);
 
     //#pragma omp parallel for schedule(dynamic)
     for (int pos = startPos; pos < endPos; pos++)
