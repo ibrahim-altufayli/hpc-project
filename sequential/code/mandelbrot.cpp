@@ -130,9 +130,9 @@ int main(int argc, char **argv)
             results_out.open("builds/time_results.txt", ios::trunc);
         }
 
-        /*double rmse = calc_rmse(image, "imgs/img_ref_" + to_string(RESOLUTION));
-        cout<<"RMSE: "<<rmse<<endl;*/
-        double rmse = 0;
+	/*        double rmse = calc_rmse(image, "imgs/img_ref_" + to_string(RESOLUTION));
+		  cout<<"RMSE: "<<rmse<<endl;*/
+	int rmse = 0;
 
         results_out<<chrono::duration_cast<chrono::seconds>(end - start).count()
          << ","<< RESOLUTION<<","<<ITERATIONS<< ','<<rmse<<endl;
