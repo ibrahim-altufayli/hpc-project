@@ -1,0 +1,5 @@
+/commands-list.txt
+**/imgs/*
+**/builds/*
+!**/builds/time_results.txt
+
