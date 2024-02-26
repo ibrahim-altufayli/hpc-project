@@ -32,7 +32,7 @@ echo "Compile with -fast"
 icc -std=c++11 ./code/mandelbrot-rmse.cpp -diag-disable=10441 -fast -o ./builds/exc_fast
 
 echo "Compile with -xSSE3"
-icc -std=c++11 ./code/mandelbrot-rmse.cpp -diag-disable=10441 -xSSE3 -o ./builds/exc_xhost_xsse3
+icc -std=c++11 ./code/mandelbrot-rmse.cpp -diag-disable=10441 -xSSE3 -o ./builds/exc_xsse3
 
 echo "Compile with -fast -xSSE3"
 icc -std=c++11 ./code/mandelbrot-rmse.cpp -diag-disable=10441 -fast -xSSE3 -o ./builds/exc_fast_xsse3
