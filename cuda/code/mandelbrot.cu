@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <complex>
+#include <cuComplex.h>
 #include <chrono>
 
 // Ranges of the set
@@ -29,24 +29,24 @@ __global__ void calcMandelbrotPxl(int* image, int dutySize){
     //I should determine which portion of positions I should deal with
     int startPos = threadIdx.x + blockIdx.x * blockDim.x;
     int endPos = startPos + dutySize;
-    for (int pos = startPos; pos < ; pos++)
+    for (int pos = startPos; pos < endPos; pos++)
     {
         if (pos < WIDTH * HEIGHT){
 
         image[pos] = 0;
 
-        const int row = pos / WIDTH;
-        const int col = pos % WIDTH;
-        const complex<double> c(col * STEP + MIN_X, row * STEP + MIN_Y);
+        int row = pos / WIDTH;
+        int col = pos % WIDTH;
+        cuDoubleComplex c = make_cuDoubleComplex(col * STEP + MIN_X, row * STEP + MIN_Y);
 
         // z = z^2 + c
-        complex<double> z(0, 0);
+        cuDoubleComplex z= make_cuDoubleComplex(0, 0);
         for (int i = 1; i <= ITERATIONS; i++)
         {
-            z = pow(z, 2) + c;
+            z = cuCadd(cuCmul(z, z), c);
 
             // If it is convergent
-            if (abs(z) >= 2)
+            if (cuCabs(z) >= 2)
             {
                 image[pos] = i;
                 break;
@@ -67,6 +67,7 @@ int main(int argc, char **argv)
     dim3 threads(32);
     dim3 blocks ( (N+threads.x-1)/threads.x );
     int dutySize = N/(threads.x * blocks.x);
+
     cudaMalloc( (void**)&dev_image, N * sizeof(int) );
     cudaMemcpy(dev_image, image, N * sizeof(int), cudaMemcpyHostToDevice);
     calcMandelbrotPxl<<<blocks,threads>>>( dev_image, dutySize );

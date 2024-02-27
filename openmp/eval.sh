@@ -14,18 +14,17 @@ ls ./imgs | grep -P 'img_(?!ref).+' | xargs -d"\n" -I% rm ./imgs/%
 echo "COMPILE TIME"
 
 echo "Compile with o2 and static scheduling"
-icc -std=c++11 -O2 -qopenmp ./code/mandelbrot_static.cpp -o ./builds/exc_static.o
+icc -std=c++11 -O2 -diag-disable=10441 -qopenmp ./code/mandelbrot_static.cpp -o ./builds/exc_static.o
 
 echo "Compile with o2 and dynamic scheduling"
-icc -std=c++11 -O2 -qopenmp ./code/mandelbrot_dynamic.cpp -o ./builds/exc_dynamic.o
+icc -std=c++11 -O2 -diag-disable=10441 -qopenmp ./code/mandelbrot_dynamic.cpp -o ./builds/exc_dynamic.o
 
 echo "Compile with o2 and guided scheduling"
-icc -std=c++11 -O2 -qopenmp ./code/mandelbrot_guided.cpp -o ./builds/exc_guided.o
+icc -std=c++11 -O2 -diag-disable=10441 -qopenmp ./code/mandelbrot_guided.cpp -o ./builds/exc_guided.o
 
-
-for i in 1000 2000 3000
+for i in 1000 2000 3000 4000 5000
 do
-  for j in 512 256 128 64 32 16 8 4 2 1
+  for j in 64 32 24 16 8 4 2 1
   do
 	echo "Executing the following resolution /$i/ with the following threads /$j/ - static scheduling"
 	./builds/exc_static.o $i 1000 $j

@@ -119,8 +119,6 @@ int main(int argc, char **argv)
                     std::cout<<"Threads Reserved: "<<omp_get_num_threads()<<std::endl;
 
                 image[pos] = 0;
-                const int row = pos / WIDTH;
-                const int col = pos % WIDTH;
                 const complex<double> c(col * STEP + MIN_X, row * STEP + MIN_Y);
 
                 // z = z^2 + c
@@ -140,8 +138,8 @@ int main(int argc, char **argv)
     }
     const auto end = chrono::steady_clock::now();
     cout << "Time elapsed: "
-         << chrono::duration_cast<chrono::seconds>(end - start).count()
-         << " seconds." << endl;
+         << chrono::duration_cast<chrono::milliseconds>(end - start).count()
+         << " milliseconds." << endl;
 
     ofstream results_out;
     results_out.open("builds/time_results_dynamic.txt", ios::app);
@@ -152,7 +150,7 @@ int main(int argc, char **argv)
     double rmse = calc_rmse(image, "imgs/img_ref_" + to_string(RESOLUTION));
         cout<<"RMSE: "<<rmse<<endl;
 
-        results_out<<chrono::duration_cast<chrono::seconds>(end - start).count()
+        results_out<<chrono::duration_cast<chrono::milliseconds>(end - start).count()
          << ","<< RESOLUTION<<","<<ITERATIONS<<","<<nThreads<<","<<rmse<<endl;
 
         results_out.close();
