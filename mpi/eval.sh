@@ -13,10 +13,10 @@ ls ./imgs | grep -P 'img_(?!ref).+' | xargs -d"\n" -I% rm ./imgs/%
 
 echo "COMPILE TIME"
 
-echo "Compile with o2"
+echo "Compile with MPI o2"
 mpiicc -std=c++11 -O2 -qopenmp code/mandelbrot_mpi.cpp -o builds/exc_mpi.o
 
-echo "Compile with o2"
+echo "Compile with MPI-OPENMP o2"
 mpiicc -std=c++11 -O2 -qopenmp code/mandelbrot_mpi_openmp.cpp -o builds/exc_mpi_openmp.o
 
 echo "********MPI on different Machines********" >> ./builds/time_results.txt
