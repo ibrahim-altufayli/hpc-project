@@ -20,7 +20,6 @@ using namespace std;
 
 __global__ void calcPxl(int* image, int width, int height, double step, int min_x, int min_y, int iterations){
     const int pos = threadIdx.x + blockIdx.x * blockDim.x;
-    if(pos >= width * height -1 ) printf("POS is: %d\n", pos);
 
         if (pos < width * height){
 
@@ -46,6 +45,7 @@ __global__ void calcPxl(int* image, int width, int height, double step, int min_
         }
     return;
     }
+
 
 double calc_rmse(int * imageGen, string refImagePath){
     ifstream file(refImagePath.c_str()); 
@@ -113,6 +113,14 @@ int main(int argc, char **argv)
     cout<< "Image Resolution: "<< RESOLUTION<<endl;
     cout<< "#Iterations: "<< ITERATIONS <<endl;
     
+    int nThreads = 4;
+    if(argc > 3 && strlen(argv[3]) > 0){
+        char* p;
+        nThreads = strtol(argv[3], &p, 10);
+        if (*p != '\0') {
+            return 1; // In main(), returning non-zero means failure
+        }
+    }
 
     int WIDTH = RATIO_X * RESOLUTION;
     int HEIGHT = RATIO_Y * RESOLUTION;
@@ -129,9 +137,9 @@ int main(int argc, char **argv)
 
     cudaMalloc( (void**)&dev_image, N * sizeof(int) );
     cudaMemcpy(dev_image, image, N * sizeof(int), cudaMemcpyHostToDevice);
-    dim3 threads(128);
+    dim3 threads(nThreads);
     dim3 blocks ( (N+threads.x-1)/threads.x );
-    cout<<threads.x<<" "<<blocks.x<<endl;
+    cout<<"Threads: "<<threads.x<<" Blocks: "<<blocks.x<<endl;
 
     calcPxl<<<blocks,threads>>>(dev_image, WIDTH, HEIGHT, STEP, MIN_X, MIN_Y, ITERATIONS);
     
@@ -156,7 +164,7 @@ int main(int argc, char **argv)
 		  cout<<"RMSE: "<<rmse<<endl;
 
         results_out<<chrono::duration_cast<chrono::milliseconds>(end - start).count()
-         << ","<< RESOLUTION<<","<<ITERATIONS<< ','<<rmse<<endl;
+         << ","<< RESOLUTION<<","<<ITERATIONS<<','<<threads.x<<','<<blocks.x<<','<<rmse<<endl;
 
         results_out.close();
     
