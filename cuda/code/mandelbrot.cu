@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cuComplex.h>
+#include <complex>
 #include <chrono>
 #include <string.h>
 #include <cmath>
@@ -17,38 +18,34 @@
 
 using namespace std;
 
-__global__ void calcMandelbrotPxl(int* image, int width, int height, int step, int min_x, int min_y, int iterations, int dutySize){
-    //I should determine which portion of positions I should deal with
-    int startPos = threadIdx.x + blockIdx.x * blockDim.x;
-    int endPos = startPos + dutySize;
-    for (int pos = startPos; pos < endPos; pos++)
-    {
+__global__ void calcPxl(int* image, int width, int height, double step, int min_x, int min_y, int iterations){
+    const int pos = threadIdx.x + blockIdx.x * blockDim.x;
+    if(pos >= width * height -1 ) printf("POS is: %d\n", pos);
 
         if (pos < width * height){
 
-        image[pos] = pos;
+            image[pos] = 0;
 
-        /*int row = pos / width;
-        int col = pos % width;
-        cuDoubleComplex c = make_cuDoubleComplex(col * step + min_x, row * step + min_y);
+            const int row = pos / width;
+            const int col = pos % width;
+            const complex<double> c(col * step + min_x, row * step + min_y);
 
-        // z = z^2 + c
-        cuDoubleComplex z= make_cuDoubleComplex(0, 0);
-        for (int i = 1; i <= iterations; i++)
-        {
-            z = cuCadd(cuCmul(z, z), c);
-
-            // If it is convergent
-            if (cuCreal(z)*cuCreal(z) + cuCimag(z)*cuCimag(z) >= 4)
+            // z = z^2 + c
+            complex<double> z(0, 0);
+            for (int i = 1; i <= iterations; i++)
             {
-                image[pos] = i;
-                break;
-            }
-        }*/
-        }
+                z = pow(z, 2) + c;
 
+                // If it is convergent
+                if (abs(z) >= 2)
+                {
+                    image[pos] = i;
+                    break;
+                }
+            }
+        }
+    return;
     }
-}
 
 double calc_rmse(int * imageGen, string refImagePath){
     ifstream file(refImagePath.c_str()); 
@@ -128,20 +125,18 @@ int main(int argc, char **argv)
     int *dev_image;
 
     const auto start = chrono::steady_clock::now();
-    dim3 threads(32);
-    dim3 blocks ( (N+threads.x-1)/threads.x );
-    int dutySize = N/(threads.x * blocks.x);
+    
 
     cudaMalloc( (void**)&dev_image, N * sizeof(int) );
     cudaMemcpy(dev_image, image, N * sizeof(int), cudaMemcpyHostToDevice);
+    dim3 threads(128);
+    dim3 blocks ( (N+threads.x-1)/threads.x );
+    cout<<threads.x<<" "<<blocks.x<<endl;
 
-    calcMandelbrotPxl<<<blocks,threads>>>( dev_image, WIDTH, HEIGHT, STEP, MIN_X, MIN_Y, ITERATIONS, dutySize);
+    calcPxl<<<blocks,threads>>>(dev_image, WIDTH, HEIGHT, STEP, MIN_X, MIN_Y, ITERATIONS);
     
 
-    cudaDeviceSynchronize();
     cudaMemcpy(image, dev_image, N * sizeof(int), cudaMemcpyDeviceToHost);
-
-
 
 
       const auto end = chrono::steady_clock::now();
