@@ -198,7 +198,8 @@ int main(int argc, char **argv)
     }
     matrix_out.close();
 
-    delete[] image; // It's here for coding style, but useless
+    delete[] image; 
+     cudaFree(dev_image); // It's here for coding style, but useless
     return 0;
 }
 
