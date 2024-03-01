@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <rdmgr>
+  <timestamp type="u64_t">1709306798</timestamp>
+  <hostname type="string">wk008</hostname>
+  <os type="string">linux</os>
+  <product type="string">Intel® Advisor 2023.2</product>
+  <buildNumber type="s32_t">614264</buildNumber>
+  <logicalCPUCount type="s32_t">24</logicalCPUCount>
+  <physicalCoreCount type="s32_t">16</physicalCoreCount>
+  <processorPackageCount type="s32_t">1</processorPackageCount>
+  <CPUFrequency type="s64_t">3200000000</CPUFrequency>
+  <CPUFamily type="s32_t">6</CPUFamily>
+  <CPUModel type="s32_t">151</CPUModel>
+  <CPUStepping type="s32_t">2</CPUStepping>
+  <CPUBrandName type="string">12th Gen Intel(R) Core(TM) i9-12900K</CPUBrandName>
+  <isa type="string">avx2</isa>
+  <collectionTimeBegin type="u64_t">1709306798</collectionTimeBegin>
+  <collectionTimeEnd type="u64_t">1709306840</collectionTimeEnd>
+  <finalizationTimeBegin type="u64_t">1709306840</finalizationTimeBegin>
+  <finalizationTimeEnd type="u64_t">1709306840</finalizationTimeEnd>
+ </rdmgr>
+</root>

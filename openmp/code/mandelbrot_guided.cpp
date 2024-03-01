@@ -147,7 +147,7 @@ int main(int argc, char **argv)
             results_out.open("builds/time_results_guided.txt", ios::trunc);
     }
 
-    double rmse = calc_rmse(image, "imgs/img_ref_" + to_string(RESOLUTION));
+    double rmse = calc_rmse(image, "imgs/img_ref_" + to_string(RESOLUTION)+ "_" + to_string(ITERATIONS));
         cout<<"RMSE: "<<rmse<<endl;
 
         results_out<<chrono::duration_cast<chrono::milliseconds>(end - start).count()

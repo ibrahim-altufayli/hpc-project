@@ -1,0 +1,483 @@
+8 [139841166149568] INFO perfrun.launcher <> - Launcher main begin
+8 [139841166149568] INFO perfrun.launcher <> - MessageCatalogInit finished
+8 [139841166149568] INFO perfrun.launcher <> - Launcher instance created
+8 [139841166149568] INFO perfrun.launcher <> - argc = 6; cmdline = /opt/intel/oneapi/advisor/2023.2.0/bin64/advixe-runss --ui-output-format xml --ui-output-fd 89 --context-value-list 
+48 [139841166149568] INFO perfrun.launcher <> - create msngr2::ICliToolContext
+48 [139841166149568] INFO perfrun.launcher <> - create file finder object
+67 [139841018783488] INFO perfrun.sdk <> - Reading value (1) from file: /proc/sys/dev/i915/perf_stream_paranoid
+67 [139841018783488] INFO perfrun.sdk <> - runCmd: /sbin/modinfo i915
+68 [139841018783488] INFO perfrun.sdk <> - runCmd started PID 77535
+71 [139841018783488] INFO perfrun.gpu <> -  ' modinfo i915 ' returned: filename:       /lib/modules/5.18.0-0.deb11.4-amd64/kernel/drivers/gpu/drm/i915/i915.ko
+license:        GPL and additional rights
+description:    Intel Graphics
+author:         Intel Corporation
+author:         Tungsten Graphics, Inc.
+import_ns:      DMA_BUF
+firmware:       i915/skl_huc_2.0.0.bin
+firmware:       i915/bxt_huc_2.0.0.bin
+firmware:       i915/kbl_huc_4.0.0.bin
+firmware:       i915/glk_huc_4.0.0.bin
+firmware:       i915/kbl_huc_4.0.0.bin
+firmware:       i915/kbl_huc_4.0.0.bin
+firmware:       i915/cml_huc_4.0.0.bin
+firmware:       i915/icl_huc_9.0.0.bin
+firmware:       i915/ehl_huc_9.0.0.bin
+firmware:       i915/ehl_huc_9.0.0.bin
+firmware:       i915/tgl_huc_7.9.3.bin
+firmware:       i915/tgl_huc_7.9.3.bin
+firmware:       i915/dg1_huc_7.9.3.bin
+firmware:       i915/tgl_huc_7.9.3.bin
+firmware:       i915/tgl_huc_7.9.3.bin
+firmware:       i915/skl_guc_69.0.3.bin
+firmware:       i915/bxt_guc_69.0.3.bin
+firmware:       i915/kbl_guc_69.0.3.bin
+firmware:       i915/glk_guc_69.0.3.bin
+firmware:       i915/kbl_guc_69.0.3.bin
+firmware:       i915/kbl_guc_69.0.3.bin
+firmware:       i915/cml_guc_69.0.3.bin
+firmware:       i915/icl_guc_69.0.3.bin
+firmware:       i915/ehl_guc_69.0.3.bin
+firmware:       i915/ehl_guc_69.0.3.bin
+firmware:       i915/tgl_guc_69.0.3.bin
+firmware:       i915/tgl_guc_69.0.3.bin
+firmware:       i915/dg1_guc_69.0.3.bin
+firmware:       i915/tgl_guc_69.0.3.bin
+firmware:       i915/adlp_guc_69.0.3.bin
+firmware:       i915/bxt_dmc_ver1_07.bin
+firmware:       i915/skl_dmc_ver1_27.bin
+firmware:       i915/kbl_dmc_ver1_04.bin
+firmware:       i915/glk_dmc_ver1_04.bin
+firmware:       i915/icl_dmc_ver1_09.bin
+firmware:       i915/tgl_dmc_ver2_12.bin
+firmware:       i915/rkl_dmc_ver2_03.bin
+firmware:       i915/dg1_dmc_ver2_02.bin
+firmware:       i915/adls_dmc_ver2_01.bin
+firmware:       i915/adlp_dmc_ver2_14.bin
+alias:          pci:v00008086d0000A789sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000A788sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000A783sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000A782sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000A781sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000A780sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004909sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004908sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004907sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004906sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004905sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046D2sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046D1sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046D0sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046C3sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046C2sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046C1sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046C0sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046B3sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046B2sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046B1sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046B0sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004628sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004626sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000462Asv*sd*bc03sc*i*
+alias:          pci:v00008086d000046AAsv*sd*bc03sc*i*
+alias:          pci:v00008086d000046A8sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046A6sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046A3sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046A2sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046A1sv*sd*bc03sc*i*
+alias:          pci:v00008086d000046A0sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004693sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004692sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004690sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000468Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00004688sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004682sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004680sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004C9Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00004C90sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004C8Csv*sd*bc03sc*i*
+alias:          pci:v00008086d00004C8Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00004C8Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00004C80sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009AF8sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009AD9sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009AC9sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009AC0sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009A78sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009A59sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009A49sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009A40sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009A70sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009A68sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009A60sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004E71sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004E61sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004E57sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004E55sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004E51sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004571sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004557sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004555sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004551sv*sd*bc03sc*i*
+alias:          pci:v00008086d00004541sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A5Dsv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A51sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A71sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A70sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A5Csv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A5Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A5Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A59sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A58sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A57sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A56sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A54sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A53sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A52sv*sd*bc03sc*i*
+alias:          pci:v00008086d00008A50sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BCCsv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BCAsv*sd*bc03sc*i*
+alias:          pci:v00008086d00009B41sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BACsv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BAAsv*sd*bc03sc*i*
+alias:          pci:v00008086d00009B21sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BF6sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BE6sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BC8sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BC6sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BC5sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BC4sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BC2sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BA8sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BA5sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BA4sv*sd*bc03sc*i*
+alias:          pci:v00008086d00009BA2sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA2sv*sd*bc03sc*i*
+alias:          pci:v00008086d000087CAsv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA3sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA0sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA4sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA1sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA8sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA7sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA6sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA5sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003EA9sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E9Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E94sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E9Csv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E9Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E98sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E96sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E92sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E91sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E99sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E93sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003E90sv*sd*bc03sc*i*
+alias:          pci:v00008086d000087C0sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000591Csv*sd*bc03sc*i*
+alias:          pci:v00008086d0000593Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00005927sv*sd*bc03sc*i*
+alias:          pci:v00008086d00005923sv*sd*bc03sc*i*
+alias:          pci:v00008086d00005926sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000591Dsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000591Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000591Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00005917sv*sd*bc03sc*i*
+alias:          pci:v00008086d00005912sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000591Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00005921sv*sd*bc03sc*i*
+alias:          pci:v00008086d00005916sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000590Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000590Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00005908sv*sd*bc03sc*i*
+alias:          pci:v00008086d00005902sv*sd*bc03sc*i*
+alias:          pci:v00008086d00005915sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000590Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00005913sv*sd*bc03sc*i*
+alias:          pci:v00008086d00005906sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003185sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003184sv*sd*bc03sc*i*
+alias:          pci:v00008086d00005A85sv*sd*bc03sc*i*
+alias:          pci:v00008086d00005A84sv*sd*bc03sc*i*
+alias:          pci:v00008086d00001A85sv*sd*bc03sc*i*
+alias:          pci:v00008086d00001A84sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A84sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000193Dsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000193Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000193Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00001932sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000192Dsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000192Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000192Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00001927sv*sd*bc03sc*i*
+alias:          pci:v00008086d00001926sv*sd*bc03sc*i*
+alias:          pci:v00008086d00001923sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000191Dsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000191Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000191Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00001912sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000191Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00001921sv*sd*bc03sc*i*
+alias:          pci:v00008086d00001916sv*sd*bc03sc*i*
+alias:          pci:v00008086d00001917sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000190Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000190Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00001902sv*sd*bc03sc*i*
+alias:          pci:v00008086d00001915sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000190Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00001913sv*sd*bc03sc*i*
+alias:          pci:v00008086d00001906sv*sd*bc03sc*i*
+alias:          pci:v00008086d000022B3sv*sd*bc03sc*i*
+alias:          pci:v00008086d000022B2sv*sd*bc03sc*i*
+alias:          pci:v00008086d000022B1sv*sd*bc03sc*i*
+alias:          pci:v00008086d000022B0sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000163Dsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000163Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00001632sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000163Esv*sd*bc03sc*i*
+alias:          pci:v00008086d0000163Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00001636sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000162Dsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000162Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00001622sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000162Esv*sd*bc03sc*i*
+alias:          pci:v00008086d0000162Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00001626sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000161Dsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000161Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00001612sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000161Esv*sd*bc03sc*i*
+alias:          pci:v00008086d0000161Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00001616sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000160Dsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000160Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00001602sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000160Esv*sd*bc03sc*i*
+alias:          pci:v00008086d0000160Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00001606sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000F33sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000F32sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000F31sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000F30sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D2Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D2Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D2Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D26sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D22sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C2Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C2Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C2Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C26sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C22sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000042Esv*sd*bc03sc*i*
+alias:          pci:v00008086d0000042Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000042Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000426sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000422sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A2Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A2Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A2Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A26sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A22sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D1Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D1Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D1Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D16sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D12sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C1Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C1Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C1Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C16sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C12sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000041Esv*sd*bc03sc*i*
+alias:          pci:v00008086d0000041Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000041Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000416sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000412sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A1Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A1Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A1Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A16sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A12sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D0Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D0Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D0Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D06sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000D02sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C0Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C0Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C0Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C06sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000C02sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000040Esv*sd*bc03sc*i*
+alias:          pci:v00008086d0000040Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d0000040Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000406sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000402sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A0Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A0Bsv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A0Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A06sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000A02sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000016Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000162sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000015Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000152sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000166sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000156sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000016Asv0000152Dsd00008990bc03sc*i*
+alias:          pci:v00008086d00000126sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000116sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000106sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000122sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000112sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000010Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00000102sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000046sv*sd*bc03sc*i*
+alias:          pci:v00008086d00000042sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000A011sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000A001sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002E92sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002E42sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002E32sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002E22sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002E12sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002E02sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002A42sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002A12sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002A02sv*sd*bc03sc*i*
+alias:          pci:v00008086d000029D2sv*sd*bc03sc*i*
+alias:          pci:v00008086d000029C2sv*sd*bc03sc*i*
+alias:          pci:v00008086d000029B2sv*sd*bc03sc*i*
+alias:          pci:v00008086d000029A2sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002992sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002982sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002972sv*sd*bc03sc*i*
+alias:          pci:v00008086d000027AEsv*sd*bc03sc*i*
+alias:          pci:v00008086d000027A2sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002772sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002592sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000258Asv*sd*bc03sc*i*
+alias:          pci:v00008086d00002582sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002572sv*sd*bc03sc*i*
+alias:          pci:v00008086d0000358Esv*sd*bc03sc*i*
+alias:          pci:v00008086d00003582sv*sd*bc03sc*i*
+alias:          pci:v00008086d00002562sv*sd*bc03sc*i*
+alias:          pci:v00008086d00003577sv*sd*bc03sc*i*
+depends:        ttm,drm,drm_kms_helper,drm_dp_helper,cec,video,drm_buddy,i2c-algo-bit
+retpoline:      Y
+intree:         Y
+name:           i915
+vermagic:       5.18.0-0.deb11.4-amd64 SMP preempt mod_unload modversions 
+sig_id:         PKCS#7
+signer:         Debian Secure Boot CA
+sig_key:        4B:6E:F5:AB:CA:66:98:25:17:8E:05:2C:84:66:7C:CB:C0:53:1F:8C
+sig_hashalgo:   sha256
+signature:      0B:41:C9:E5:DC:77:D7:67:45:44:A1:80:97:48:52:E0:EA:53:A3:25:
+		60:1E:E4:FB:DC:1A:05:10:D4:EF:E2:67:3F:2D:99:DF:37:6D:34:8A:
+		92:0D:EA:56:04:F5:BB:1D:4F:3E:03:7C:2D:1C:C1:88:6D:EA:50:E7:
+		96:CA:61:26:60:30:A6:F4:2E:C0:C0:55:28:C7:39:38:CC:F2:9C:BC:
+		71:80:C1:BD:59:AC:E9:A7:B0:EB:AA:D0:8D:4A:AF:5C:2E:B9:2D:7C:
+		5C:F4:C6:86:C2:FF:E3:D1:15:C1:F7:97:99:10:A9:CA:FA:40:0D:79:
+		97:04:0D:CA:B7:15:EA:57:74:9F:66:B6:1C:0E:8F:A7:0A:FB:71:FB:
+		3B:C0:C9:80:60:93:AB:67:3A:E3:BA:2C:5F:AF:08:3D:AB:02:78:16:
+		47:F9:55:F6:57:26:05:54:E0:1A:F8:05:C2:B2:BD:EF:F6:26:24:44:
+		86:BA:28:21:74:41:B2:1F:2D:1D:DB:85:AF:58:C4:9B:C1:21:E7:9B:
+		EC:47:AB:FB:01:84:3D:7D:59:E0:A2:A0:DC:36:D6:F6:E7:B4:B1:68:
+		B1:59:A4:60:B7:99:39:70:52:7E:C0:6F:6D:70:5B:1C:44:43:65:2E:
+		74:8D:4A:82:82:0B:D6:23:2C:25:64:6D:DE:C4:1A:A4
+parm:           modeset:Use kernel modesetting [KMS] (0=disable, 1=on, -1=force vga console preference [default]) (int)
+parm:           enable_dc:Enable power-saving display C-states. (-1=auto [default]; 0=disable; 1=up to DC5; 2=up to DC6; 3=up to DC5 with DC3CO; 4=up to DC6 with DC3CO) (int)
+parm:           enable_fbc:Enable frame buffer compression for power savings (default: -1 (use per-chip default)) (int)
+parm:           lvds_channel_mode:Specify LVDS channel mode (0=probe BIOS [default], 1=single-channel, 2=dual-channel) (int)
+parm:           panel_use_ssc:Use Spread Spectrum Clock with panels [LVDS/eDP] (default: auto from VBT) (int)
+parm:           vbt_sdvo_panel_type:Override/Ignore selection of SDVO panel mode in the VBT (-2=ignore, -1=auto [default], index in VBT BIOS table) (int)
+parm:           reset:Attempt GPU resets (0=disabled, 1=full gpu reset, 2=engine reset [default]) (uint)
+parm:           vbt_firmware:Load VBT from specified file under /lib/firmware (charp)
+parm:           error_capture:Record the GPU state following a hang. This information in /sys/class/drm/card<N>/error is vital for triaging and debugging hangs. (bool)
+parm:           enable_hangcheck:Periodically check GPU activity for detecting hangs. WARNING: Disabling this can cause system wide hangs. (default: true) (bool)
+parm:           enable_psr:Enable PSR (0=disabled, 1=enabled) Default: -1 (use per-chip default) (int)
+parm:           psr_safest_params:Replace PSR VBT parameters by the safest and not optimal ones. This is helpful to detect if PSR issues are related to bad values set in  VBT. (0=use VBT parameters, 1=use safest parameters) (bool)
+parm:           enable_psr2_sel_fetch:Enable PSR2 selective fetch (0=disabled, 1=enabled) Default: 0 (bool)
+parm:           force_probe:Force probe the driver for specified devices. See CONFIG_DRM_I915_FORCE_PROBE for details. (charp)
+parm:           disable_power_well:Disable display power wells when possible (-1=auto [default], 0=power wells always on, 1=power wells disabled when possible) (int)
+parm:           enable_ips:Enable IPS (default: true) (int)
+parm:           fastboot:Try to skip unnecessary mode sets at boot time (0=disabled, 1=enabled) Default: -1 (use per-chip default) (int)
+parm:           load_detect_test:Force-enable the VGA load detect code for testing (default:false). For developers only. (bool)
+parm:           force_reset_modeset_test:Force a modeset during gpu reset for testing (default:false). For developers only. (bool)
+parm:           invert_brightness:Invert backlight brightness (-1 force normal, 0 machine defaults, 1 force inversion), please report PCI device ID, subsystem vendor and subsystem device ID to dri-devel@lists.freedesktop.org, if your machine needs it. It will then be included in an upcoming module version. (int)
+parm:           disable_display:Disable display (default: false) (bool)
+parm:           memtest:Perform a read/write test of all device memory on module load (default: off) (bool)
+parm:           mmio_debug:Enable the MMIO debug code for the first N failures (default: off). This may negatively affect performance. (int)
+parm:           verbose_state_checks:Enable verbose logs (ie. WARN_ON()) in case of unexpected hw state conditions. (bool)
+parm:           nuclear_pageflip:Force enable atomic functionality on platforms that don't have full support yet. (bool)
+parm:           edp_vswing:Ignore/Override vswing pre-emph table selection from VBT (0=use value from vbt [default], 1=low power swing(200mV),2=default swing(400mV)) (int)
+parm:           enable_guc:Enable GuC load for GuC submission and/or HuC load. Required functionality can be selected using bitmask values. (-1=auto [default], 0=disable, 1=GuC submission, 2=HuC load) (int)
+parm:           guc_log_level:GuC firmware logging level. Requires GuC to be loaded. (-1=auto [default], 0=disable, 1..4=enable with verbosity min..max) (int)
+parm:           guc_firmware_path:GuC firmware path to use instead of the default one (charp)
+parm:           huc_firmware_path:HuC firmware path to use instead of the default one (charp)
+parm:           dmc_firmware_path:DMC firmware path to use instead of the default one (charp)
+parm:           enable_dp_mst:Enable multi-stream transport (MST) for new DisplayPort sinks. (default: true) (bool)
+parm:           enable_dpcd_backlight:Enable support for DPCD backlight control(-1=use per-VBT LFP backlight type setting [default], 0=disabled, 1=enable, 2=force VESA interface, 3=force Intel interface) (int)
+parm:           enable_gvt:Enable support for Intel GVT-g graphics virtualization host support(default:false) (bool)
+parm:           request_timeout_ms:Default request/fence/batch buffer expiration timeout. (uint)
+parm:           mitigations:Selectively enable security mitigations for all Intel® GPUs in the system.
+
+  auto -- enables all mitigations required for the platform [default]
+  off  -- disables all mitigations
+
+Individual mitigations can be enabled by passing a comma-separated string,
+e.g. mitigations=residuals to enable only clearing residuals or
+mitigations=auto,noresiduals to disable only the clear residual mitigation.
+Either '!' or 'no' may be used to switch from enabling the mitigation to
+disabling it.
+
+Active mitigations for Ivybridge, Baytrail, Haswell:
+  residuals -- clear all thread-local registers between contexts
+
+71 [139841018783488] INFO perfrun.gpu <> - Found driver location is: /lib/modules/5.18.0-0.deb11.4-amd64/kernel/drivers/gpu/drm/i915/i915.ko
+73 [139841018783488] INFO perfrun.gpu <> - Can't find the patched symbol: OA cfg too long to fit into workarond BB
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = targetOS; value = Linux
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = OS; value = Linux
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = OSBuildNumber; value = 0
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = OSBitness; value = 64
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = RootPrivileges; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isPtraceScopeLimited; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isCATSupportedByCPU; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isL3MonitoringSupportedByCPU; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isTSXAvailable; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isPTAvailable; value = true
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isHTEnabled; value = true
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = fpgaOnBoard; value = None
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = omniPathOnBoard; value = None
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = genArchOnBoard; value = 10
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = pciClassParts; value = 
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = tidValuesForIO; value = 
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = populatedIoParts; value = 
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = populatedIoUnits; value = 
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = populatedTidValuesForIO; value = 
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isSGXAvailable; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = LinuxRelease; value = 5.18.0-0.deb11.4-amd64
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = is3DXPPresent; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = is3DXP2LMMode; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = is3DXPAppDirectMode; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = IsNUMANodeWithoutCPUsPresent; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = Hypervisor; value = None
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = PerfmonVersion; value = 5
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isMaxDRAMBandwidthMeasurementSupported; value = false
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = preferedGpuAdapter; value = 0:0:2.0
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = gpuAdapterNameList; value = 0:0:2.0|AlderLake-S GT1;
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = gpuAdapterTileNameList; value = 0:0:2.0|AlderLake-S GT1|0,;
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = gpuOpenCLDeviceOrder; value = bdf
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = gpuAdapterNameAliasList; value = 0:0:2.0|AlderLake-S GT1|GPU 0;
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isEHFIAvailable; value = true
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = areGpuHardwareMetricsAvailableList; value = 0:0:2.0|InsufficientPermissions;
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = gpuPlatformIndexList; value = 0:0:2.0|0;
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = i915Status; value = KernelNotPatched
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isTPSSAvailable; value = true
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isPytraceAvailable; value = true
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isGENDebugInfoAvailableList; value = 0:0:2.0|true;
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isGTPinCollectionAvailableList; value = 0:0:2.0|true;
+73 [139841166149568] INFO perfrun.launcher <> - Put into the variant bag the context value: name = forceShowInlines; value = false
+74 [139841166149568] INFO perfrun.launcher <> - Application exit code: 0
+74 [139841166149568] INFO perfrun.launcher <> - Exit code: 0

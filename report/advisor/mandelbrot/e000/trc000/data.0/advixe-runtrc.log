@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log version="1.0" tool="runtool">
+
+<msg id="1" tool="runtool">
+  <type>log-start</type>
+  <arg>2024/03/01 16:26:38</arg>
+</msg>
+<msg id="2" tool="runtool">
+  <type>bandwidth-measurement-starts</type>
+</msg>
+<msg id="3" tool="runtool">
+  <type>bandwidth-measurement-done</type>
+</msg>
+<msg id="4" tool="runtool">
+  <type>collector-starts</type>
+</msg>
+<msg id="5" tool="runtool">
+  <type>marker-file</type>
+  <arg>/home/stud/S5475768/Desktop/hpc-project/report/advisor/mandelbrot/e000/trc000/trc000.advixe</arg>
+</msg>
+<msg id="6" tool="trc">
+  <type>PROCESS_START</type>
+  <arg>/VM/stud/S5475768/Desktop/hpc-project/report/exc.o</arg>
+  <arg>77799</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="7" tool="trc">
+  <type>PROCESS_ANALYSIS_MODE</type>
+  <arg>full</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="8" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/VM/stud/S5475768/Desktop/hpc-project/report/exc.o</arg>
+  <arg>0x400000</arg>
+  <arg>0x40c24f</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="9" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/ld-linux-x86-64.so.2</arg>
+  <arg>0x7fc0ff1f9000</arg>
+  <arg>0x7fc0ff225177</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="10" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>[vdso]</arg>
+  <arg>0x7ffcc79f0000</arg>
+  <arg>0x7ffcc79f0d7b</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="11" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib/x86_64-linux-gnu/libstdc++.so.6</arg>
+  <arg>0x7fc0e9f56000</arg>
+  <arg>0x7fc0ea1227ff</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="12" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libm.so.6</arg>
+  <arg>0x7fc0e9d59000</arg>
+  <arg>0x7fc0e9e9c10f</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="13" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/opt/intel/oneapi/compiler/2023.2.1/linux/compiler/lib/intel64_lin/libiomp5.so</arg>
+  <arg>0x7fc0e9800000</arg>
+  <arg>0x7fc0e9c4114f</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="14" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libgcc_s.so.1</arg>
+  <arg>0x7fc0e9ce6000</arg>
+  <arg>0x7fc0e9cff447</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="15" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libpthread.so.0</arg>
+  <arg>0x7fc0e9cb9000</arg>
+  <arg>0x7fc0e9cda46f</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="16" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libc.so.6</arg>
+  <arg>0x7fc0e962c000</arg>
+  <arg>0x7fc0e97ff67f</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="17" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libdl.so.2</arg>
+  <arg>0x7fc0e9cb3000</arg>
+  <arg>0x7fc0e9cb810f</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="18" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/librt.so.1</arg>
+  <arg>0x7fc0e9c9f000</arg>
+  <arg>0x7fc0e9ca8bdf</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:26:49 2024</timestamp>
+</msg>
+<msg id="19" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/VM/stud/S5475768/Desktop/hpc-project/report/exc.o</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="20" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/ld-linux-x86-64.so.2</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="21" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>[vdso]</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="22" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib/x86_64-linux-gnu/libstdc++.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="23" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libm.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="24" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/opt/intel/oneapi/compiler/2023.2.1/linux/compiler/lib/intel64_lin/libiomp5.so</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="25" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libgcc_s.so.1</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="26" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libpthread.so.0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="27" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libc.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="28" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libdl.so.2</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="29" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/librt.so.1</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="30" tool="trc">
+  <type>PROCESS_FINISH</type>
+  <arg>/VM/stud/S5475768/Desktop/hpc-project/report/exc.o</arg>
+  <arg>77799</arg>
+  <arg>0xffffffff</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri Mar  1 16:27:16 2024</timestamp>
+</msg>
+<msg id="31" tool="runtool">
+  <type>app-exit-code</type>
+  <arg>255</arg>
+</msg>
+<msg id="32" tool="runtool">
+  <type>marker-file</type>
+  <arg>/home/stud/S5475768/Desktop/hpc-project/report/advisor/mandelbrot/e000/trc000/trc000.advixe</arg>
+</msg>
+<msg id="33" tool="runtool">
+  <type>collector-done</type>
+</msg>
+<msg id="34" tool="runtool">
+  <type>log-end</type>
+  <arg>2024/03/01 16:27:20</arg>
+</msg>
+
+</log>
+

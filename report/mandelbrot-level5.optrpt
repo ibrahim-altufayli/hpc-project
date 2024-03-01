@@ -1,0 +1,795 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000
+
+Compiler options: -std=c++11 -O2 -g -qopenmp -qopt-report=5 -o exc.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/52=1.9%] mandelbrot.cpp(29,1)
+  -> EXTERN: (30,22) operator new[](std::size_t)
+  -> EXTERN: (32,24) std::chrono::_V2::steady_clock::now()
+  -> INLINE (MANUAL): (39,66) std::complex<double>::complex(std::complex<double> *, double, double) (isz = 0) (sz = 8)
+  -> INLINE (MANUAL): (45,24) std::pow<double>(const std::complex<double> &, int) (isz = 131) (sz = 140)
+    -> INLINE (MANUAL): /usr/include/c++/10/complex:(1021,17) std::complex<double>::complex(std::complex<double> *, double, double) (isz = 0) (sz = 8)
+    -> INLINE (MANUAL): /usr/include/c++/10/complex:(1021,22) std::operator/(const std::complex<double> &, const std::complex<double> &) (isz = 4) (sz = 13)
+      -> INLINE (MANUAL): /opt/intel/oneapi/compiler/2023.2.1/linux/bin/intel64/../../compiler/include/complex:(252,31) std::complex<double>::complex(std::complex<double> *, std::complex<double>::_ComplexT) (isz = 0) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/10/complex:(1021,66) std::__complex_pow_unsigned<double>(std::complex<double>, unsigned int) (isz = 52) (sz = 61)
+      -> INLINE (MANUAL): (998,7) std::complex<double>::complex(std::complex<double> *, double, double) (isz = 0) (sz = 8)
+      -> INLINE (MANUAL): (1002,15) std::complex<double>::operator*=<double>(std::complex<double> *, const std::complex<double> &) (isz = 2) (sz = 11)
+      -> INLINE (MANUAL): (1004,17) std::complex<double>::operator*=<double>(std::complex<double> *, const std::complex<double> &) (isz = 2) (sz = 11)
+    -> INLINE (MANUAL): /usr/include/c++/10/complex:(1022,44) std::__complex_pow_unsigned<double>(std::complex<double>, unsigned int) (isz = 52) (sz = 61)
+      -> INLINE (MANUAL): (998,7) std::complex<double>::complex(std::complex<double> *, double, double) (isz = 0) (sz = 8)
+      -> INLINE (MANUAL): (1002,15) std::complex<double>::operator*=<double>(std::complex<double> *, const std::complex<double> &) (isz = 2) (sz = 11)
+      -> INLINE (MANUAL): (1004,17) std::complex<double>::operator*=<double>(std::complex<double> *, const std::complex<double> &) (isz = 2) (sz = 11)
+  -> INLINE (MANUAL): (45,29) std::operator+(const std::complex<double> &, const std::complex<double> &) (isz = 4) (sz = 13)
+    -> INLINE (MANUAL): /opt/intel/oneapi/compiler/2023.2.1/linux/bin/intel64/../../compiler/include/complex:(237,31) std::complex<double>::complex(std::complex<double> *, std::complex<double>::_ComplexT) (isz = 0) (sz = 6)
+  -> INLINE (MANUAL): (48,17) std::abs<double>(const std::complex<double> &) (isz = 5) (sz = 12)
+    -> INLINE (MANUAL): /usr/include/c++/10/complex:(625,43) std::__complex_abs(double __complex__) (isz = 1) (sz = 8)
+      -> EXTERN: (617,50) __builtin_cabs(double __complex__)
+    -> INLINE (MANUAL): /usr/include/c++/10/complex:(625,61) std::complex<double>::__rep(const std::complex<double> *) const (isz = 0) (sz = 6)
+  -> EXTERN: (55,22) std::chrono::_V2::steady_clock::now()
+  -> (56,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <1>]]
+  -> (57,10) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, long) (isz = 1) (sz = 10)
+     [[ Called routine is noinline  <1>]]
+  -> INLINE (MANUAL): (57,52) std::chrono::duration_cast<std::chrono::seconds, int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &) (isz = 9) (sz = 16)
+    -> INLINE (MANUAL): /usr/include/c++/10/chrono:(233,22) std::chrono::__duration_cast_impl<std::chrono::seconds, std::ratio_divide<std::nano, std::chrono::duration<int64_t, std::ratio<1L, 1L>>::period>, std::__success_type<std::decay<int64_t &&>::type>::type, true, false>::__cast<int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &) (isz = 8) (sz = 15)
+      -> INLINE (MANUAL): (183,20) std::chrono::duration<int64_t, std::ratio<1L, 1L>>::duration<std::chrono::duration<int64_t, std::ratio<1L, 1L>>::rep, std::enable_if<true, void>::type>(std::chrono::duration<int64_t, std::ratio<1L, 1L>> *, const std::chrono::duration<int64_t, std::ratio<1L, 1L>>::rep &) (isz = 0) (sz = 7)
+      -> INLINE (MANUAL): (184,29) std::chrono::duration<int64_t, std::nano>::count(const std::chrono::duration<int64_t, std::nano> *) const (isz = 0) (sz = 6)
+  -> INLINE (MANUAL): (57,58) std::chrono::operator-<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration, std::chrono::_V2::steady_clock::duration>(const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> &, const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> &) (isz = 34) (sz = 43)
+    -> INLINE (MANUAL): /usr/include/c++/10/chrono:(913,16) std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration>::time_since_epoch(const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> *) const (isz = 3) (sz = 10)
+    -> INLINE (MANUAL): /usr/include/c++/10/chrono:(913,43) std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration>::time_since_epoch(const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> *) const (isz = 3) (sz = 10)
+    -> INLINE (MANUAL): /usr/include/c++/10/chrono:(913,43) std::chrono::operator-<int64_t, std::nano, int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &, const std::chrono::duration<int64_t, std::nano> &) (isz = 19) (sz = 28)
+      -> INLINE (MANUAL): (564,14) std::chrono::duration<int64_t, std::nano>::duration<signed long, std::enable_if<true, void>::type>(std::chrono::duration<int64_t, std::nano> *, const signed long &) (isz = 0) (sz = 7)
+      -> INLINE (MANUAL): (564,26) std::chrono::duration<int64_t, std::nano>::count(const std::chrono::duration<int64_t, std::nano> *) const (isz = 0) (sz = 6)
+      -> INLINE (MANUAL): (564,48) std::chrono::duration<int64_t, std::nano>::count(const std::chrono::duration<int64_t, std::nano> *) const (isz = 0) (sz = 6)
+  -> INLINE (MANUAL): (57,65) std::chrono::duration<int64_t, std::ratio<1L, 1L>>::count(const std::chrono::duration<int64_t, std::ratio<1L, 1L>> *) const (isz = 0) (sz = 6)
+  -> (58,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <1>]]
+  -> (58,25) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <1>]]
+  -> INLINE (MANUAL): (61,14) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/10/fstream:(862,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (863,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (863,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/10/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (863,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 25) (sz = 30)
+        -> EXTERN: (249,12) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (250,2) __cxa_begin_catch
+        -> EXTERN: (251,4) __cxa_end_catch
+        -> EXTERN: (252,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (252,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/streambuf:(204,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (205,9) std::locale::~locale(std::locale *)
+  -> INLINE (MANUAL): (61,14) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/10/fstream:(779,7) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 72) (sz = 79)
+      -> INLINE (MANUAL): (779,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (779,7) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 25) (sz = 30)
+        -> EXTERN: (249,12) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (250,2) __cxa_begin_catch
+        -> EXTERN: (251,4) __cxa_end_catch
+        -> EXTERN: (252,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (252,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/streambuf:(204,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (205,9) std::locale::~locale(std::locale *)
+      -> INLINE (MANUAL): (779,7) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/10/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> EXTERN: (779,7) std::basic_filebuf<char, std::char_traits<char>>::basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (779,7) std::basic_ostream<char, std::char_traits<char>>::basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 44) (sz = 51)
+        -> INLINE (MANUAL): /usr/include/c++/10/ostream:(390,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+            -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+        -> INLINE (MANUAL): /usr/include/c++/10/ostream:(390,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+        -> EXTERN: /usr/include/c++/10/ostream:(391,15) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (779,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+          -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+      -> EXTERN: (780,15) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+  -> (65,14) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <1>]]
+  -> (65,66) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <1>]]
+  -> INLINE (MANUAL): (66,9) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/10/fstream:(862,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (863,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (863,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/10/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (863,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 25) (sz = 30)
+        -> EXTERN: (249,12) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (250,2) __cxa_begin_catch
+        -> EXTERN: (251,4) __cxa_end_catch
+        -> EXTERN: (252,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (252,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/streambuf:(204,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (205,9) std::locale::~locale(std::locale *)
+  -> INLINE (MANUAL): (69,16) std::basic_ofstream<char, std::char_traits<char>>::open(std::basic_ofstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode) (isz = 23) (sz = 32)
+    -> EXTERN: /usr/include/c++/10/fstream:(923,18) std::basic_filebuf<char, std::char_traits<char>>::open(std::basic_filebuf<char, std::char_traits<char>> *, const char *, std::ios_base::openmode)
+    -> INLINE (MANUAL): /usr/include/c++/10/fstream:(923,35) std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) (isz = 0) (sz = 7)
+    -> INLINE (MANUAL): /usr/include/c++/10/fstream:(924,10) std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate) (isz = 7) (sz = 14)
+      -> EXTERN: /usr/include/c++/10/bits/basic_ios.h:(158,15) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+      -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(158,27) std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const (isz = 0) (sz = 6)
+      -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(158,37) std::operator|(std::_Ios_Iostate, std::_Ios_Iostate) (isz = 0) (sz = 7)
+    -> EXTERN: /usr/include/c++/10/fstream:(928,10) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+  -> INLINE (MANUAL): (70,21) std::basic_ofstream<char, std::char_traits<char>>::is_open(std::basic_ofstream<char, std::char_traits<char>> *) (isz = 3) (sz = 10)
+    -> INLINE (MANUAL): /usr/include/c++/10/fstream:(904,27) std::basic_filebuf<char, std::char_traits<char>>::is_open(const std::basic_filebuf<char, std::char_traits<char>> *) const (isz = 4) (sz = 11)
+      -> EXTERN: (266,24) std::__basic_file<char>::is_open(const std::__basic_file<char> *) const
+  -> (72,14) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <1>]]
+  -> (72,40) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <1>]]
+  -> INLINE (MANUAL): (73,9) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/10/fstream:(862,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (863,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (863,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/10/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (863,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 25) (sz = 30)
+        -> EXTERN: (249,12) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (250,2) __cxa_begin_catch
+        -> EXTERN: (251,4) __cxa_end_catch
+        -> EXTERN: (252,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (252,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/streambuf:(204,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (205,9) std::locale::~locale(std::locale *)
+  -> EXTERN: (80,24) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (83,28) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, char) (isz = 3) (sz = 12)
+     [[ Called routine is noinline  <1>]]
+  -> (86,24) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <1>]]
+  -> INLINE (MANUAL): (88,16) std::basic_ofstream<char, std::char_traits<char>>::close(std::basic_ofstream<char, std::char_traits<char>> *) (isz = 12) (sz = 17)
+    -> EXTERN: /usr/include/c++/10/fstream:(995,18) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+    -> INLINE (MANUAL): /usr/include/c++/10/fstream:(996,10) std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate) (isz = 7) (sz = 14)
+      -> EXTERN: /usr/include/c++/10/bits/basic_ios.h:(158,15) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+      -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(158,27) std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const (isz = 0) (sz = 6)
+      -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(158,37) std::operator|(std::_Ios_Iostate, std::_Ios_Iostate) (isz = 0) (sz = 7)
+  -> EXTERN: (90,5) operator delete[](void *)
+  -> INLINE (MANUAL): (91,5) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/10/fstream:(862,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (863,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (863,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/10/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (863,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 25) (sz = 30)
+        -> EXTERN: (249,12) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (250,2) __cxa_begin_catch
+        -> EXTERN: (251,4) __cxa_end_catch
+        -> EXTERN: (252,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (252,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/10/streambuf:(204,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (205,9) std::locale::~locale(std::locale *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at mandelbrot.cpp(33,5)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at mandelbrot.cpp(43,9)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ mandelbrot.cpp(48,13) ]
+   LOOP END
+LOOP END
+
+LOOP BEGIN at mandelbrot.cpp(78,9)
+   remark #26015: Exception can be thrown by the call to std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)   [ mandelbrot.cpp(80,24) ]
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ mandelbrot.cpp(80,24) ]
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at mandelbrot.cpp(76,5)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ mandelbrot.cpp(80,24) ]
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+mandelbrot.cpp(29,1):remark #34051: REGISTER ALLOCATION : [main] mandelbrot.cpp:29
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   17[ rax rdx rcx rbx rsi rdi r8 r12-r15 zmm0-zmm5]
+        
+    Routine temporaries
+        Total         :     328
+            Global    :      56
+            Local     :     272
+        Regenerable   :     110
+        Spilled       :      11
+        
+    Routine stack
+        Variables     :     556 bytes*
+            Reads     :      26 [4.48e-07 ~ 0.0%]
+            Writes    :      64 [2.04e-06 ~ 0.0%]
+        Spills        :      64 bytes*
+            Reads     :      10 [6.47e+00 ~ 6.5%]
+            Writes    :      13 [4.54e+00 ~ 4.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, char))/usr/include/c++/10/ostream(518,5)
+
+===========================================================================
+
+Begin optimization report for: std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *))/usr/include/c++/10/ostream(607,5)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate))/usr/include/c++/10/bits/basic_ios.h(158,7)
+
+===========================================================================
+
+Begin optimization report for: std::char_traits<char>::length(const std::char_traits<char>::char_type *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::char_traits<char>::length(const std::char_traits<char>::char_type *)) [5/52=9.6%] /usr/include/c++/10/bits/char_traits.h(359,7)
+  -> EXTERN: (364,9) __builtin_strlen(const char *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/10/bits/char_traits.h(359,7):remark #34051: REGISTER ALLOCATION : [_ZNSt11char_traitsIcE6lengthEPKc] /usr/include/c++/10/bits/char_traits.h:359
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      12
+            Global    :       7
+            Local     :       5
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)))/usr/include/c++/10/ostream(109,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, long))/usr/include/c++/10/ostream(167,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *))/usr/include/c++/10/streambuf(205,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const))/usr/include/c++/10/streambuf(204,7)
+
+===========================================================================
+
+Begin optimization report for: std::ctype<char>::widen(const std::ctype<char> *, char) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::ctype<char>::widen(const std::ctype<char> *, char) const) /usr/include/c++/10/bits/locale_facets.h(873,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const)/usr/include/c++/10/bits/basic_ios.h(138,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *))/usr/include/c++/10/bits/basic_ios.h(282,20)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const))/usr/include/c++/10/bits/basic_ios.h(282,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::widen(const std::basic_ios<char, std::char_traits<char>> *, char) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::widen(const std::basic_ios<char, std::char_traits<char>> *, char) const)/usr/include/c++/10/bits/basic_ios.h(450,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *))/usr/include/c++/10/bits/basic_ios.h(463,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const))/usr/include/c++/10/bits/basic_ios.h(460,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/10/ostream(93,24)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ostream<char, std::char_traits<char>>::basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ostream<char, std::char_traits<char>>::basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/10/ostream(391,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *))/usr/include/c++/10/fstream(247,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_filebuf<char, std::char_traits<char>>::is_open(const std::basic_filebuf<char, std::char_traits<char>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_filebuf<char, std::char_traits<char>>::is_open(const std::basic_filebuf<char, std::char_traits<char>> *) const)/usr/include/c++/10/fstream(266,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/10/fstream(780,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const))/usr/include/c++/10/fstream(779,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/10/fstream(863,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const))/usr/include/c++/10/fstream(862,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::is_open(std::basic_ofstream<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::is_open(std::basic_ofstream<char, std::char_traits<char>> *))/usr/include/c++/10/fstream(904,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::open(std::basic_ofstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::open(std::basic_ofstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode))/usr/include/c++/10/fstream(922,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::close(std::basic_ofstream<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::close(std::basic_ofstream<char, std::char_traits<char>> *))/usr/include/c++/10/fstream(994,7)
+
+===========================================================================
+
+Begin optimization report for: std::complex<double>::complex(std::complex<double> *, std::complex<double>::_ComplexT)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::complex<double>::complex(std::complex<double> *, std::complex<double>::_ComplexT)) /usr/include/c++/10/complex(1232,65)
+
+===========================================================================
+
+Begin optimization report for: std::complex<double>::complex(std::complex<double> *, double, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::complex<double>::complex(std::complex<double> *, double, double)) /usr/include/c++/10/complex(1236,30)
+
+===========================================================================
+
+Begin optimization report for: std::complex<double>::__rep(const std::complex<double> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::complex<double>::__rep(const std::complex<double> *) const) /usr/include/c++/10/complex(1363,50)
+
+===========================================================================
+
+Begin optimization report for: std::complex<double>::operator*=<double>(std::complex<double> *, const std::complex<double> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::complex<double>::operator*=<double>(std::complex<double> *, const std::complex<double> &)) /opt/intel/oneapi/compiler/2023.2.1/linux/bin/intel64/../../compiler/include/complex(223,61)
+
+===========================================================================
+
+Begin optimization report for: std::chrono::duration<int64_t, std::nano>::count(const std::chrono::duration<int64_t, std::nano> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::chrono::duration<int64_t, std::nano>::count(const std::chrono::duration<int64_t, std::nano> *) const) /usr/include/c++/10/chrono(438,2)
+
+===========================================================================
+
+Begin optimization report for: std::chrono::duration<int64_t, std::nano>::duration<signed long, std::enable_if<true, void>::type>(std::chrono::duration<int64_t, std::nano> *, const signed long &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::chrono::duration<int64_t, std::nano>::duration<signed long, std::enable_if<true, void>::type>(std::chrono::duration<int64_t, std::nano> *, const signed long &)) /usr/include/c++/10/chrono(423,35)
+
+===========================================================================
+
+Begin optimization report for: std::chrono::duration<int64_t, std::ratio<1L, 1L>>::count(const std::chrono::duration<int64_t, std::ratio<1L, 1L>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::chrono::duration<int64_t, std::ratio<1L, 1L>>::count(const std::chrono::duration<int64_t, std::ratio<1L, 1L>> *) const) /usr/include/c++/10/chrono(438,2)
+
+===========================================================================
+
+Begin optimization report for: std::chrono::duration<int64_t, std::ratio<1L, 1L>>::duration<std::chrono::duration<int64_t, std::ratio<1L, 1L>>::rep, std::enable_if<true, void>::type>(std::chrono::duration<int64_t, std::ratio<1L, 1L>> *, const std::chrono::duration<int64_t, std::ratio<1L, 1L>>::rep &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::chrono::duration<int64_t, std::ratio<1L, 1L>>::duration<std::chrono::duration<int64_t, std::ratio<1L, 1L>>::rep, std::enable_if<true, void>::type>(std::chrono::duration<int64_t, std::ratio<1L, 1L>> *, const std::chrono::duration<int64_t, std::ratio<1L, 1L>>::rep &)) /usr/include/c++/10/chrono(423,35)
+
+===========================================================================
+
+Begin optimization report for: std::chrono::__duration_cast_impl<std::chrono::seconds, std::ratio_divide<std::nano, std::chrono::duration<int64_t, std::ratio<1L, 1L>>::period>, std::__success_type<std::decay<int64_t &&>::type>::type, true, false>::__cast<int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::chrono::__duration_cast_impl<std::chrono::seconds, std::ratio_divide<std::nano, std::chrono::duration<int64_t, std::ratio<1L, 1L>>::period>, std::__success_type<std::decay<int64_t &&>::type>::type, true, false>::__cast<int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &)) /usr/include/c++/10/chrono(181,4)
+
+===========================================================================
+
+Begin optimization report for: std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration>::time_since_epoch(const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration>::time_since_epoch(const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> *) const) /usr/include/c++/10/chrono(789,2)
+
+===========================================================================
+
+Begin optimization report for: std::chrono::duration_cast<std::chrono::seconds, int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::chrono::duration_cast<std::chrono::seconds, int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &)) [38/52=73.1%] /usr/include/c++/10/chrono(225,7)
+  -> INLINE (MANUAL): (233,22) std::chrono::__duration_cast_impl<std::chrono::seconds, std::ratio_divide<std::nano, std::chrono::duration<int64_t, std::ratio<1L, 1L>>::period>, std::__success_type<std::decay<int64_t &&>::type>::type, true, false>::__cast<int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &) (isz = 8) (sz = 15)
+    -> INLINE (MANUAL): (183,20) std::chrono::duration<int64_t, std::ratio<1L, 1L>>::duration<std::chrono::duration<int64_t, std::ratio<1L, 1L>>::rep, std::enable_if<true, void>::type>(std::chrono::duration<int64_t, std::ratio<1L, 1L>> *, const std::chrono::duration<int64_t, std::ratio<1L, 1L>>::rep &) (isz = 0) (sz = 7)
+    -> INLINE (MANUAL): (184,29) std::chrono::duration<int64_t, std::nano>::count(const std::chrono::duration<int64_t, std::nano> *) const (isz = 0) (sz = 6)
+
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/10/chrono(225,7):remark #34051: REGISTER ALLOCATION : [_ZNSt6chrono13duration_castINS_8durationIlSt5ratioILl1ELl1EEEElS2_ILl1ELl1000000000EEEENSt9enable_ifIXsr3std6chrono13__is_durationIT_EE5valueES7_E4typeERKNS1_IT0_T1_EE] /usr/include/c++/10/chrono:225
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rcx rdi]
+        
+    Routine temporaries
+        Total         :      18
+            Global    :       0
+            Local     :      18
+        Regenerable   :       2
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::chrono::operator-<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration, std::chrono::_V2::steady_clock::duration>(const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> &, const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::chrono::operator-<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration, std::chrono::_V2::steady_clock::duration>(const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> &, const std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::_V2::steady_clock::duration> &)) /usr/include/c++/10/chrono(913,7)
+
+===========================================================================
+
+Begin optimization report for: std::chrono::operator-<int64_t, std::nano, int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &, const std::chrono::duration<int64_t, std::nano> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::chrono::operator-<int64_t, std::nano, int64_t, std::nano>(const std::chrono::duration<int64_t, std::nano> &, const std::chrono::duration<int64_t, std::nano> &)) /usr/include/c++/10/chrono(560,7)
+
+===========================================================================
+
+Begin optimization report for: std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)) /usr/include/c++/10/bits/ios_base.h(130,3)
+
+===========================================================================
+
+Begin optimization report for: std::operator|(std::_Ios_Iostate, std::_Ios_Iostate)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::operator|(std::_Ios_Iostate, std::_Ios_Iostate)) /usr/include/c++/10/bits/ios_base.h(170,3)
+
+===========================================================================
+
+Begin optimization report for: std::endl<char, std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::endl<char, std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &))/usr/include/c++/10/ostream(682,5)
+
+===========================================================================
+
+Begin optimization report for: std::flush<char, std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::flush<char, std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &))/usr/include/c++/10/ostream(704,5)
+
+===========================================================================
+
+Begin optimization report for: std::__complex_abs(double __complex__)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__complex_abs(double __complex__)) /usr/include/c++/10/complex(617,41)
+
+===========================================================================
+
+Begin optimization report for: std::operator+(const std::complex<double> &, const std::complex<double> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::operator+(const std::complex<double> &, const std::complex<double> &)) /opt/intel/oneapi/compiler/2023.2.1/linux/bin/intel64/../../compiler/include/complex(236,66)
+
+===========================================================================
+
+Begin optimization report for: std::operator/(const std::complex<double> &, const std::complex<double> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::operator/(const std::complex<double> &, const std::complex<double> &)) /opt/intel/oneapi/compiler/2023.2.1/linux/bin/intel64/../../compiler/include/complex(251,66)
+
+===========================================================================
+
+Begin optimization report for: std::abs<double>(const std::complex<double> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::abs<double>(const std::complex<double> &)) /usr/include/c++/10/complex(625,34)
+
+===========================================================================
+
+Begin optimization report for: std::__check_facet<std::basic_ios<char, std::char_traits<char>>::__ctype_type>(const std::basic_ios<char, std::char_traits<char>>::__ctype_type *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__check_facet<std::basic_ios<char, std::char_traits<char>>::__ctype_type>(const std::basic_ios<char, std::char_traits<char>>::__ctype_type *)) /usr/include/c++/10/bits/basic_ios.h(48,5)
+
+===========================================================================
+
+Begin optimization report for: __sti__$E()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (__sti__$E()) [50/52=96.2%] <compiler generated>
+  -> EXTERN: /usr/include/c++/10/iostream:(74,25) __cxa_atexit(void (*)(void *), void *, void *)
+  -> EXTERN: /usr/include/c++/10/iostream:(74,25) std::ios_base::Init::Init(std::ios_base::Init *)
+
+
+    Report from: Code generation optimizations [cg]
+
+<compiler generated>:remark #34051: REGISTER ALLOCATION : [__sti__$E] (null):0
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       7
+            Local     :       6
+        Regenerable   :       7
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::__complex_pow_unsigned<double>(std::complex<double>, unsigned int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__complex_pow_unsigned<double>(std::complex<double>, unsigned int)) /usr/include/c++/10/complex(997,5)
+
+===========================================================================
+
+Begin optimization report for: std::pow<double>(const std::complex<double> &, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::pow<double>(const std::complex<double> &, int)) /usr/include/c++/10/complex(1019,5)
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> The routine declaration is annotated with "__attribute__((noinline))".  
+    Remove this annotation to permit the compiler to inline this routine.
+

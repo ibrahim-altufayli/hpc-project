@@ -26,16 +26,16 @@ for i in 1000 2000 3000 4000 5000
 do
   for j in 64 32 24 16 8 4 2 1
   do
-	echo "Executing the following resolution /$i/ with the following threads /$j/ - static scheduling"
-	./builds/exc_static.o $i 1000 $j
+	echo "Executing the following iterations /$i/ with the following threads /$j/ - static scheduling"
+	./builds/exc_static.o 1000 $i $j
 	echo "-------------------------------"
 
-	echo "Executing the following resolution /$i/ with the following threads /$j/ - dynamic scheduling"
-	./builds/exc_dynamic.o $i 1000 $j
+	echo "Executing the following iterations /$i/ with the following threads /$j/ - dynamic scheduling"
+	./builds/exc_dynamic.o 1000 $i $j
 	echo "-------------------------------"
 
-	echo "Executing the following resolution /$i/ with the following threads /$j/ - guided scheduling"
-	./builds/exc_guided.o $i 1000 $j
+	echo "Executing the following iterations /$i/ with the following threads /$j/ - guided scheduling"
+	./builds/exc_guided.o 1000 $i $j
 	echo "-------------------------------"
 
 

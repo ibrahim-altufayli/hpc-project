@@ -1,0 +1,10 @@
+
+=== Start: [2024/03/01 16:26:38] === 
+Peak bandwidth measurement started...
+Peak bandwidth measurement finished.
+Analysis started...
+Result file: /home/stud/S5475768/Desktop/hpc-project/report/advisor/mandelbrot/e000/trc000/trc000.advixe 
+Application exit code: 255 
+Result file: /home/stud/S5475768/Desktop/hpc-project/report/advisor/mandelbrot/e000/trc000/trc000.advixe 
+Analysis completed
+=== End: [2024/03/01 16:27:20] === 

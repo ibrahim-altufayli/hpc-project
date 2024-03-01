@@ -1,0 +1,13 @@
+-r
+/home/stud/S5475768/Desktop/hpc-project/report/advisor/mandelbrot/e000/trc000
+--return-app-exitcode
+--cs-mode=no-count-loops,no-count-flops,stl-profiling,stack-stitching
+--target-loops=n
+--count-flops
+--benchmarks=dram,mcdram,cpu_cache,flop_peak,int,
+--cs-file=/home/stud/S5475768/Desktop/hpc-project/report/advisor/mandelbrot/e000/callstacks.def
+--jit-profiling
+--target-gpu=0:0:2.0
+--app-working-dir=/home/stud/S5475768/Desktop/hpc-project/report
+--
+/home/stud/S5475768/Desktop/hpc-project/report/exc.o

@@ -1,0 +1,61 @@
+# callstacks file version: 8
+#    rowid	    parent	       rva	 loop	 system	                                function	binary	instance_start_rva	instance_size	instance_end_rva	finst_rowid	roi	is_inlined	jit_method_id	tripcounts_roi	flops_roi	cachesim_roi	data_transfer_roi	projection_roi
+         1	        -1	      8992	    0	      0	                                  _start	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	8992	43	0	1	0	0	0	0	0	0	0	0
+         2	        -1	      9033	    0	      0	                                  _start	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	8992	43	0	1	0	0	0	0	0	0	0	0
+         3	        57	    146697	    1	      1	 [Loop at line 261 in __libc_start_main]	/lib/x86_64-linux-gnu/libc.so.6	146561,146800	223,140	0	18	0	0	0	0	0	0	0	0
+         4	        36	      9517	    0	      0	                      std::__complex_abs	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9497	21	0	2	0	1	0	0	0	0	0	0
+         5	         4	     12455	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+         6	         4	     12479	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+         7	         4	     12161	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+         8	         4	     12421	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+         9	        40	      9526	    1	      0	               [Loop at line 43 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	97	11289,9544	3	0	0	0	0	0	0	0	0
+        10	         4	     12302	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        11	         4	     12471	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        12	        44	     11289	    0	      0	                   std::ostream::ostream	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9798,9819,11289	16,38,28	0	8	0	1	0	0	0	0	0	0
+        13	         4	     12226	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        14	         4	     12475	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        15	         4	     12341	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        16	         4	     12408	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        17	         4	     12459	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        18	         4	     12374	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        19	        40	      9532	    1	      0	               [Loop at line 43 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	97	11289,9544	3	0	0	0	0	0	0	0	0
+        20	         4	     11614	    0	      0	                            __libm_hypot	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	11600	16	0	11	0	0	0	0	0	0	0	0
+        21	         4	     12356	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        22	        50	      9470	    0	      0	std::complex<double>::operator*=<double>	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	39	0	12	0	1	0	0	0	0	0	0
+        23	         4	     13170	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        24	         4	     11456	    0	      0	                                    cabs	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	11456	18	0	15	0	0	0	0	0	0	0	0
+        25	         4	     12443	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        26	        36	      9504	    0	      0	                      std::__complex_abs	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9497	21	0	2	0	1	0	0	0	0	0	0
+        27	         4	     12264	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        28	         4	     12463	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        29	         4	     12197	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        30	         4	     12413	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        31	         4	     13105	    0	      0	                         __libm_hypot_e7	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	12128	1047	0	7	0	0	0	0	0	0	0	0
+        32	        50	      9452	    0	      0	std::complex<double>::operator*=<double>	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	39	0	12	0	1	0	0	0	0	0	0
+        33	         3	      9375	    0	      0	                                    main	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9232	2096	0	4	0	0	0	0	0	0	0	0
+        34	        33	      9447	    1	      0	               [Loop at line 33 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9375,11289	225,38	9600	6	0	0	0	0	0	0	0	0
+        35	        34	      9497	    1	      0	               [Loop at line 43 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	97	11289,9544	3	0	0	0	0	0	0	0	0
+        36	        35	      9497	    0	      0	                        std::abs<double>	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9497	21	0	5	0	1	0	0	0	0	0	0
+        37	        34	      9517	    1	      0	               [Loop at line 43 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	97	11289,9544	3	0	0	0	0	0	0	0	0
+        38	         3	      9517	    0	      0	                                    main	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9232	2096	0	4	0	0	0	0	0	0	0	0
+        39	         3	      9375	    0	      0	                                    main	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9232	2096	0	4	0	0	0	0	0	0	0	0
+        40	        39	      9447	    1	      0	               [Loop at line 33 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9375,11289	225,38	9600	6	0	0	0	0	0	0	0	0
+        41	         3	      9526	    0	      0	                                    main	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9232	2096	0	4	0	0	0	0	0	0	0	0
+        42	        33	      9703	    1	      0	               [Loop at line 33 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9375,11289	225,38	9600	6	0	0	0	0	0	0	0	0
+        43	        42	      9703	    0	      0	std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9703,9723,9798,9819,9864,9880,11127,11159,11188,11212	15,5,16,38,12,38,23,24,9,105	0	10	0	1	0	0	0	0	0	0
+        44	        43	      9798	    0	      0	std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9703,9723,9798,9819,9864,9880,11127,11159,11188,11212	15,5,16,38,12,38,23,24,9,105	0	9	0	1	0	0	0	0	0	0
+        45	        33	     11289	    1	      0	               [Loop at line 33 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9375,11289	225,38	9600	6	0	0	0	0	0	0	0	0
+        46	         3	     11289	    0	      0	                                    main	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9232	2096	0	4	0	0	0	0	0	0	0	0
+        47	         3	      9532	    0	      0	                                    main	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9232	2096	0	4	0	0	0	0	0	0	0	0
+        48	        34	      9447	    1	      0	               [Loop at line 43 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	97	11289,9544	3	0	0	0	0	0	0	0	0
+        49	        48	      9447	    0	      0	                        std::pow<double>	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	39	0	14	0	1	0	0	0	0	0	0
+        50	        49	      9447	    0	      0	     std::__complex_pow_unsigned<double>	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	39	0	13	0	1	0	0	0	0	0	0
+        51	        34	      9470	    1	      0	               [Loop at line 43 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	97	11289,9544	3	0	0	0	0	0	0	0	0
+        52	         3	      9470	    0	      0	                                    main	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9232	2096	0	4	0	0	0	0	0	0	0	0
+        53	        34	      9504	    1	      0	               [Loop at line 43 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	97	11289,9544	3	0	0	0	0	0	0	0	0
+        54	         3	      9504	    0	      0	                                    main	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9232	2096	0	4	0	0	0	0	0	0	0	0
+        55	        34	      9452	    1	      0	               [Loop at line 43 in main]	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9447	97	11289,9544	3	0	0	0	0	0	0	0	0
+        56	         3	      9452	    0	      0	                                    main	/VM/stud/S5475768/Desktop/hpc-project/report/exc.o	9232	2096	0	4	0	0	0	0	0	0	0	0
+        57	         2	    146561	    0	      1	                       __libc_start_main	/lib/x86_64-linux-gnu/libc.so.6	146464	476	0	19	0	0	0	0	0	0	0	0
+        58	         2	    146697	    0	      1	                       __libc_start_main	/lib/x86_64-linux-gnu/libc.so.6	146464	476	0	19	0	0	0	0	0	0	0	0
+        59	        -1	         0	    0	      0	                [Unknown stack frame(s)]	n/a	0	0	0	21	0	0	0	0	0	0	0	0
