@@ -103,20 +103,23 @@ int main(int argc, char **argv)
     int dutySize =  (HEIGHT * WIDTH) / numprocs;
     int startPos = myid * dutySize;
     int endPos = startPos + dutySize;
-    
-    //if the process rank is zero, start counting time and define the array where we want to gather all processes results
+    //assuming that always we employ the full amount of machines
+    int nThreads = (256*10)/(numprocs);
+    //if the process rank is zero, start counting time and define the array where we want to gather all process results
     if(myid == 0){
          cout<< "Image Resolution: "<< RESOLUTION<<endl;
          cout<< "#Iterations: "<< ITERATIONS <<endl;
         image = new int[HEIGHT * WIDTH];
         std::cout<<"Number of Processes: "<<numprocs<<std::endl;
+        std::cout<<"Number of Threads per Process:"<<nThreads<<std::endl;
         std::cout<<"Duty Size for each Process is: "<<dutySize<<std::endl;
     }
     
 
     int * partialImage = new int[dutySize];
+    
 
-    omp_set_num_threads(256);
+    omp_set_num_threads(nThreads);
 
     #pragma omp parallel for schedule(dynamic)
     for (int pos = startPos; pos < endPos; pos++)
@@ -147,8 +150,8 @@ int main(int argc, char **argv)
     if(myid == 0){
         const auto end = chrono::steady_clock::now();
         cout << "Time elapsed: "
-            << chrono::duration_cast<chrono::seconds>(end - start).count()
-            << " seconds." << endl;
+            << chrono::duration_cast<chrono::milliseconds>(end - start).count()
+            << " milliseconds." << endl;
 
     ofstream results_out;
     results_out.open("builds/time_results.txt", ios::app);
@@ -159,8 +162,8 @@ int main(int argc, char **argv)
     double rmse = calc_rmse(image, "imgs/img_ref_" + to_string(RESOLUTION));
         cout<<"RMSE: "<<rmse<<endl;
 
-        results_out<<chrono::duration_cast<chrono::seconds>(end - start).count()
-         << ","<< RESOLUTION<<","<<ITERATIONS<<","<<numprocs<<","<<rmse<<endl;
+        results_out<<chrono::duration_cast<chrono::milliseconds>(end - start).count()
+         << ","<< RESOLUTION<<","<<ITERATIONS<<","<<numprocs<<","<<nThreads<<","<<rmse<<endl;
 
         results_out.close();
     // Write the result to a file
