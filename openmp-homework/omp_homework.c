@@ -73,7 +73,7 @@ int DFT(int idft, double* xr, double* xi, double* Xr_o, double* Xi_o, int N){
   
   //#pragma omp simd
 
-  #pragma omp parallel for schedule(static)
+  #pragma omp parallel for  private(k, n) shared(xr, xi, Xr_o, Xi_o) schedule(static)
   for (k=0 ; k<N ; k++)
   {
       for (n=0 ; n<N ; n++)  {
