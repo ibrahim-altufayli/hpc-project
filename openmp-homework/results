@@ -1,0 +1,8 @@
+without vectorization: 1.018708 seconds
+with the addition of simd: 1.048658 seconds
+with different number of threads:
+24: 0.134880 seconds
+16: 0.156796 seconds
+8: 0.144505 seconds
+4: 0.310743 seconds
+2: 0.522369 seconds
