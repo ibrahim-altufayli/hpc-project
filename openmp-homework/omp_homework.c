@@ -67,14 +67,11 @@ int main(int argc, char* argv[]){
 // DFT/IDFT routine
 // idft: 1 direct DFT, -1 inverse IDFT (Inverse DFT)
 int DFT(int idft, double* xr, double* xi, double* Xr_o, double* Xi_o, int N){
+  
   int k, n;
 
-  //omp_set_num_threads(24);  
-  
-  
-
-  //#pragma omp parallel for  private(k, n) shared(xr, xi, Xr_o, Xi_o) schedule(static)
-  #pragma omp simd
+  omp_set_num_threads(24);  
+  #pragma omp parallel for  private(k, n) shared(xr, xi, Xr_o, Xi_o) schedule(static)
   for (k=0 ; k<N ; k++)
   {
       for (n=0 ; n<N ; n++)  {
