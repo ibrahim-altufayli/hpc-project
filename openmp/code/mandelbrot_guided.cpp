@@ -109,7 +109,7 @@ int main(int argc, char **argv)
     std::cout<<"Threads Requested: "<<nThreads<<std::endl;
 
 
-    #pragma omp parallel for schedule(guided)
+    #pragma omp parallel for shared(image) schedule(guided)
     for (int row = 0; row < HEIGHT; row++)
     {
         for (int col = 0; col < WIDTH; col++)
